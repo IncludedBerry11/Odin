@@ -82,8 +82,8 @@ object LocationUtils {
     @SubscribeEvent
     fun onConnect(event: FMLNetworkEvent.ClientConnectedToServerEvent) {
         onHypixel = if (ClickGUIModule.forceHypixel) true else mc.runCatching {
-            !event.isLocal && ((thePlayer?.clientBrand?.lowercase()?.contains("hypixel")
-                ?: currentServerData?.serverIP?.contains("hypixel", true)) == true)
+            !event.isLocal && ((thePlayer?.clientBrand?.lowercase()?.contains("fakepixel")
+                ?: currentServerData?.serverIP?.contains("fakepixel", true)) == true)
         }.getOrDefault(false)
     }
 
@@ -115,4 +115,3 @@ object LocationUtils {
         return null
     }
 }
-
